@@ -6,6 +6,13 @@ import(
     "encoding/json"
 )
 
+type Post struct{
+    ID string `json:"id"`
+    Title string `json:"title"`
+    Body string `json:"body"`
+}
+
+var posts []Post
 
 // a sintaxe para criar um endpoint é assim:
 //router.HandleFunc("/<sua-url>",<nome-da-função>).Methods("<method>")
