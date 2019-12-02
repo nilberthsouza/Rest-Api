@@ -31,3 +31,8 @@ func main(){
 }
 
 
+func getPost(w http.Response.Writer, r *http.Request){
+    w.Header().Set("Content-Type","application/json")
+    json.NewEncoder(w).Encode(posts)
+
+}
