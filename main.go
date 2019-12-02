@@ -36,3 +36,16 @@ func getPost(w http.Response.Writer, r *http.Request){
     json.NewEncoder(w).Encode(posts)
 
 }
+
+func getPosts(w http.Response.Writer, r *http.Request){
+    w.Heade().Set("Content-Type","application/json")
+    params := mux.Vars(r)
+    for _, item := range posts{
+        if item.ID == params["id"]{
+            json.NewEnconder(w).Encode(item)
+            break
+        }
+        return
+    }
+    json.NewEncoder(w).Encode(&Post{})
+}
