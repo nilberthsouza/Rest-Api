@@ -19,12 +19,9 @@ var posts []Post
 // a sintaxe para criar um endpoint é assim:
 //router.HandleFunc("/<sua-url>",<nome-da-função>).Methods("<method>")
 
-
-
 func getPosts(w http.ResponseWriter, r *http.Request){
     w.Header().Set("Content-Type","application/json")
     json.NewEncoder(w).Encode(posts)
-
 }
 
 func getPost(w http.ResponseWriter, r *http.Request){
